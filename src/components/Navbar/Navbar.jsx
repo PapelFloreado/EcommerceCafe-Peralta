@@ -2,22 +2,31 @@ import "./Navbar.css"
 import logo from "../../logo-coffe.svg"
 import CartWidget from "../CartWidget/CartWidget"
 import NavbarItems from "../NavbarItems/NavbarItems"
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
 
-const Navbar = () => {
-
-    return(
-        <nav className="container-fluid navbar">
-            <div className="container d-flex ">
-                <a className="navbar-brand justify-self-end" href="index.html">
-                    <img className="img__logo" src={logo} alt="logo" width={160}/>
-                </a>
-                <NavbarItems/> 
-
-                <CartWidget/>           
-            </div>
-        </nav>
-    )
+const ContainerOutsideExample = ()=> {
+  return (
+      <Navbar expand="lg" variant="light" bg="light">
+        <Container className="d-flex">
+          <Navbar.Brand href="index.html">
+          <img
+              src={logo}
+              width="140"            
+              className="d-inline-block align-top"
+              alt="logo"
+            />
+          </Navbar.Brand>
+          <NavbarItems/>
+          <CartWidget/>
+        </Container>
+      </Navbar>
+  );
 }
 
-export default Navbar
+export default ContainerOutsideExample;
+                
+                       
+         
+  
