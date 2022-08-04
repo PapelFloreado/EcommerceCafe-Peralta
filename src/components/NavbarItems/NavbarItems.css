@@ -1,3 +1,7 @@
 .nav-item{
     flex-basis: 100%;
 }
+
+.nav-drop{
+    flex-basis: content;
+}
