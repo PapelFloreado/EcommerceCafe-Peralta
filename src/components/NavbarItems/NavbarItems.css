@@ -5,3 +5,20 @@
 .nav-drop{
     flex-basis: content;
 }
+
+.nav-link{
+    color: black;
+    font-weight: 600;
+}
+
+.dropdown-item{
+    color: black;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover{
+    border-bottom: 1px solid black;
+    
+}
+
