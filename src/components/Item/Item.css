@@ -6,4 +6,6 @@
 .button{
     border-radius: 0;
 }
-
+.container-cards{
+    max-width: 1080px;
+}

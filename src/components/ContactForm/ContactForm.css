@@ -1,0 +1,13 @@
+.contact-form{
+    display:flex;
+    margin-top: 4rem;
+}
+
+.container-form{
+    min-height: 80vh;
+}
+
+h1{
+    margin-top: 4rem;
+    font-size: 4em;
+}

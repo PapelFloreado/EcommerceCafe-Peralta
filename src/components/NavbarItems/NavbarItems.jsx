@@ -3,6 +3,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "./NavbarItems.css"
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { NavLink} from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget';
+import { ListGroup } from 'react-bootstrap';
 
 const NavBarItems = () =>{
     return (
@@ -10,13 +13,17 @@ const NavBarItems = () =>{
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex justify-content-evenly nav-item">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Contacto</Nav.Link>
-            <NavDropdown className="nav-drop" title="Shop" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#">Café</NavDropdown.Item>
-                <NavDropdown.Item href="#">Accesorios</NavDropdown.Item>
-                <NavDropdown.Item href="#">Insumos</NavDropdown.Item>
+            <NavLink className="nav-link" to={"/"}>Home</NavLink>
+            <NavLink className="nav-link" to={"/productos"}>Productos</NavLink>
+            <NavDropdown className="nav-drop" title="Categorías" id="basic-nav-dropdown">
+              <ListGroup>
+                <NavLink className="border-bottom justify-content-center" to={"/categoria/cafe"} >Granos de Café</NavLink>
+                <NavLink className="border-bottom" to={"/categoria/capsulas"} >Capsulas</NavLink>
+                <NavLink to={"/categoria/cafetera"} >Cafeteras</NavLink>
+              </ListGroup>
             </NavDropdown>
+            <NavLink className="nav-link" to={"/contacto"}>Contacto</NavLink>
+            <CartWidget/>
           </Nav>
           </Navbar.Collapse>
         </Container>

@@ -2,13 +2,13 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "./Item.css"
+import { Link } from 'react-router-dom'
+
 
 function Item({title, description, price, id, pictureUrl}){
-
   
-
   return (
-    <Container className="d-flex flex-wrap">
+    <Container className="d-flex p-3 col-4">
   
       <Card  className="cards"  style={{ width: '30rem' }}>
         <Card.Img variant="top" src={pictureUrl}/>
@@ -20,10 +20,12 @@ function Item({title, description, price, id, pictureUrl}){
         <Card.Text>
          Price: ${price}, Product Id:{id}
         </Card.Text>
-        <Button className="button" variant="dark">Ver detalle del Producto</Button>
+        <Link to={`/item-detail/${id}`}>
+          <Button className="button" variant="dark">Ver mas detalles del Producto</Button>
+        </Link>
+        
         </Card.Body>
       </Card>
-
     </Container>
  
   );

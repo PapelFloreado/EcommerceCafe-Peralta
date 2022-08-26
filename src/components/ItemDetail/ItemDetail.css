@@ -1,0 +1,25 @@
+.item-detail{
+    min-height: 80vh;
+
+}
+img.img-detail{
+    max-width: 65%;
+    box-shadow: 2px 10px 56px -12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 10px 56px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 10px 56px -12px rgba(0,0,0,0.75);
+}
+
+.itemCard{
+    margin:4rem 0;
+}
+
+@media screen and (max-width: 720px) {
+    .item-detail{
+        display: flex;
+        flex-direction: column;
+    }
+    .item-card{
+        flex-direction: column;
+    }
+    
+}

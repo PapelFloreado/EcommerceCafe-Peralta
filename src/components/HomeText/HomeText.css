@@ -1,0 +1,10 @@
+.img-coffe{
+    width: 50%;
+    box-shadow: 2px 10px 56px -12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 10px 56px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 10px 56px -12px rgba(0,0,0,0.75);
+    
+}
+.our{
+    font-size: 5em;
+}

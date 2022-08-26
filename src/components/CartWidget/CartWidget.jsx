@@ -1,14 +1,12 @@
 import cart from "../../coffe-cart.svg"
 import "./CartWidget.css"
-import Container from "react-bootstrap/esm/Container"
+import { NavLink } from 'react-router-dom'
 
 const CartWidget = ()=> {
     return(
-        <Container className="d-flex justify-content-end cart-w">
-            <a href="index.html">
+            <NavLink to={"/cart"}>
                 <img src={cart} alt="cart" width={25}/>
-            </a>
-        </Container>
+            </NavLink>
     )
 }
 
