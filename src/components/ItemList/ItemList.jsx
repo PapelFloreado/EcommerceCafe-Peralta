@@ -4,12 +4,11 @@ import { Container } from "react-bootstrap";
 import SpinnerLoad from "../SpinnerLoad/SpinnerLoad";
 
 
-
 function ItemList ({items}) {
 
 
         return (
-            <Container className="d-flex m-5 flex-wrap ">
+            <Container className="d-flex flex-wrap">
                 {items.length < 1 ? (
                     <SpinnerLoad/>
                 ) : (items.map((items, index)=> 

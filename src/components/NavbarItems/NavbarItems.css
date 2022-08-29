@@ -22,3 +22,9 @@
     
 }
 
+@media screen and (max-width:720px ) {
+    .nav-ham{
+        flex-basis: 40%;
+        justify-self: end;
+    }
+}

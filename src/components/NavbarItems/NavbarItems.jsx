@@ -9,7 +9,7 @@ import { ListGroup } from 'react-bootstrap';
 
 const NavBarItems = () =>{
     return (
-        <Container className="d-flex justify-content-between">
+        <Container className="d-flex justify-content-between nav-ham">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex justify-content-evenly nav-item">

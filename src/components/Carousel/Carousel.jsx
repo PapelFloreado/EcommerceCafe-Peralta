@@ -1,8 +1,8 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import slider1 from "./assets/img/coffe-slider2.jpg"
-import slider2 from "./assets/img/coffe-slider3.jpg"
-import slider3 from "./assets/img/coffe-slider.jpg"
+import slider1 from "../../assets/img/coffe-slider2.jpg"
+import slider2 from "../../assets/img/coffe-slider3.jpg"
+import slider3 from "../../assets/img/coffe-slider.jpg"
 
 
 

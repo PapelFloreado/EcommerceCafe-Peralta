@@ -33,7 +33,7 @@ export default function ItemListContainer (){
     return(
         
         <Container className="container item-list">
-            <h1 className="d-flex justify-content-center">Nuestros Productos</h1>
+            <h1 className="d-flex">Nuestros Productos</h1>
             <Container>
                 {items.lenght < 1 ?(<SpinnerLoad/>) : (<ItemList className="container" items={items}/>)}    
             </Container>

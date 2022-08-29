@@ -9,3 +9,13 @@
 .container-cards{
     max-width: 1080px;
 }
+.btn{
+    align-self: center;
+    background-color: black;
+    color: white;
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+
+}

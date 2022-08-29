@@ -4,3 +4,15 @@
 .border{
     border-radius: 0;
 }
+.btn{
+    align-self: center;
+    background-color: black;
+    color: white;
+   
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+
+}
+

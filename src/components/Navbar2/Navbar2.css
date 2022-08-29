@@ -1,0 +1,7 @@
+.navbar {
+    box-shadow: 2px 9px 42px -5px rgba(0,0,0,0.67);
+    -webkit-box-shadow: 2px 9px 42px -5px rgba(0,0,0,0.67);
+    -moz-box-shadow: 2px 9px 42px -5px rgba(0,0,0,0.67);
+    min-height: 15vh;
+    font-size: 1.5rem;
+}

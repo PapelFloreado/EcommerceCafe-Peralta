@@ -4,3 +4,9 @@
     font-size: 1.5rem;
     position:static;
 }
+
+@media screen and (max-width: 720px) {
+    .footer{
+        font-size: 1em;
+    }
+}

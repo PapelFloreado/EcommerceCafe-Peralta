@@ -16,7 +16,6 @@ const ContainerOutsideExample = ()=> {
           <img src={logo} width="140" className="d-inline-block align-top" alt="logo"/>
           </NavLink>
           <NavbarItems/>
-          
         </Container>
       </Navbar>
     </div>
