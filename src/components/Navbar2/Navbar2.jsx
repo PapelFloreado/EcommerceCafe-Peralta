@@ -20,7 +20,7 @@ function BasicExample() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-center">
+          <Nav className="me-auto justify-content-around basis">
             <NavLink className="nav-link" to={"/"}>Home</NavLink>
             <NavLink className="nav-link" to={"/productos"}>Productos</NavLink>
             <NavDropdown title="Categorías" id="basic-nav-dropdown">

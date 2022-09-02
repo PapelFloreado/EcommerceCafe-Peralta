@@ -10,7 +10,8 @@
                     "id": 1,
                     "categoria": "cafetera",
                     "pictureUrl": "https://www.cucinare.tv/wp-content/uploads/2022/05/Cafetera-espresso-hogar-1024x683.jpg",
-                    "altImg":"cafetera pro"
+                    "altImg":"cafetera pro",
+                    "stock": 4
               
                 },
                 {
@@ -20,7 +21,8 @@
                     "id": 2,
                     "categoria": "capsulas",
                     "pictureUrl": "https://perfectdailygrind.com/es/wp-content/uploads/sites/2/2018/09/blue-brown-coffee-269349-e1586734860857.jpg",
-                    "altImg": "capsulas de cafe"
+                    "altImg": "capsulas de cafe",
+                    "stock":80
               
                 },
                 {
@@ -30,7 +32,8 @@
                     "id": 3,
                     "categoria": "cafe",
                     "pictureUrl": "https://cafedelirante.com.ar/wp-content/uploads/2020/09/portada-granos-de-cafe-1-800x397.jpg",
-                    "altImg": "granos de cafe extra"
+                    "altImg": "granos de cafe extra",
+                    "stock": 14
               
                 },
                 {
@@ -40,7 +43,8 @@
                     "id": 4,
                     "categoria": "cafe",
                     "pictureUrl": "https://www.cucinare.tv/wp-content/uploads/2022/06/Cafe-1024x576.jpg",
-                    "altImg": "grano de cafe semipremium"
+                    "altImg": "grano de cafe semipremium",
+                    "stock": 7
               
                 },
                 {
@@ -50,7 +54,9 @@
                     "id": 5,
                     "categoria": "cafetera",
                     "pictureUrl": "https://www.cucinare.tv/wp-content/uploads/2022/05/Cafetera-de-filtro-1024x579.jpg",
-                    "altImg": "cafetera de filtro"
+                    "altImg": "cafetera de filtro",
+                    "stock": 2
+                    
                 },
                 {
                     "title": "Cafetera de Aluminio",
@@ -59,7 +65,9 @@
                     "id": 6,
                     "categoria": "cafetera",
                     "pictureUrl": "https://www.cucinare.tv/wp-content/uploads/2022/05/Tomando-cafe-1024x576.jpg",
-                    "altImg": "cafetera de aluminio"
+                    "altImg": "cafetera de aluminio",
+                    "stock": 23
+                    
                 },
                 {
                     "title": "Cafetera de émbolo",
@@ -68,7 +76,8 @@
                     "id": 7,
                     "categoria": "cafetera",
                     "pictureUrl": "https://www.cucinare.tv/wp-content/uploads/2022/05/Cafetera-prensa-francesa-1024x683.jpg",
-                    "altImg": "cafetera de embolo"
+                    "altImg": "cafetera de embolo",
+                    "stock": 4
                 },
                 {
                     "title": "Grano de cafe extra",
@@ -77,7 +86,8 @@
                     "id": 8,
                     "categoria": "cafe",
                     "pictureUrl": "https://cafeselcriollo.com/wp-content/uploads/2022/01/beneficios-del-cafe-en-grano_-768x513.jpg.webp",
-                    "altImg": "granos decafe extra"
+                    "altImg": "granos decafe extra",
+                    "stock": 65
                 },
                 {
                     "title": "Capsula de cafe Pleyades",
@@ -86,7 +96,8 @@
                     "id": 9,
                     "categoria": "capsulas",
                     "pictureUrl": "https://www.cucinare.tv/wp-content/uploads/2022/08/Cafe-1-1024x576.jpg",
-                    "altImg":"capsula de cafe intergalactica"
+                    "altImg":"capsula de cafe intergalactica",
+                    "stock": 12
                 }
               ]            
         }

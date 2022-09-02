@@ -1,16 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Container } from 'react-bootstrap'
 import ItemCount from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 import { motion } from "framer-motion"
+import { Link} from "react-router-dom"
+import { useContext } from 'react';
+import { GlobalContext } from '../../context/CartContext';
+
 
 const ItemDetail = ({item}) => {
+
+const {addItem} = useContext(GlobalContext)
   
 const {id, title, price, description, pictureUrl, altImg} = item
+const [counter, setCounter] = useState(0)
 
-function onAdd(counter){
-  console.log("has agregado", counter, "unidades al carrito")
+function onAdd(quantity){
+  setCounter(quantity)
+  console.log(quantity)
+
+  addItem(item, quantity)
 }
+
 
   return (
     <motion.div
@@ -29,7 +40,13 @@ function onAdd(counter){
             <p className="item-description">{description}</p>
             <p>Item ID: {id}</p>
             <p>Precio: ${price}</p>
-            <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+            {
+            counter !== 0 ? (
+            <Link to="/cart">
+              <button className='btn button btn-compra'>Finalizar compra</button> 
+            </Link>):
+              (<ItemCount item={item} quantity={item.quantity} stock={item.stock} initial={1} onAdd={onAdd}/>)
+            }
           </div>
         </div>
       </Container>

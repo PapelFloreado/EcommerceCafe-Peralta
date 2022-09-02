@@ -5,3 +5,6 @@
     min-height: 15vh;
     font-size: 1.5rem;
 }
+.basis{
+    flex-basis: 100%;
+}

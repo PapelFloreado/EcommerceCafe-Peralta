@@ -13,6 +13,13 @@ img.img-detail{
     margin:4rem 0;
 }
 
+.btn-compra{
+    font-size: 2rem;
+    color:white;
+    background-color: black;
+    padding:1rem
+}
+
 @media screen and (max-width: 720px) {
     .item-detail{
         display: flex;
