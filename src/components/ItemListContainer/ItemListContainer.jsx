@@ -47,10 +47,7 @@ export default function ItemListContainer (){
                 {items.lenght < 1 ?(<SpinnerLoad/>) : (<ItemList className="container" items={items}/>)}    
             </Container>
         </Container>
-        
-        
-            
-     
+
     )
 }
 

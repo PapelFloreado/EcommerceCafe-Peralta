@@ -1,0 +1,14 @@
+.linea{
+    border-bottom: 3px solid black;
+}
+.home-title{
+    padding: 5rem 2rem 1rem 0;
+    font-size: 4rem;
+
+}
+.text-home{
+    font-size: 1.2rem;
+}
+.img-home{
+    width: 65%;
+}
