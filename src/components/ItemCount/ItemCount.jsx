@@ -48,7 +48,7 @@ const ItemCount = ({stock, initial=1, onAdd, item}) => {
                     transition={{ type: "spring", stiffness:100, damping: 50 }}
                     onHoverStart={e => {}}
                     onHoverEnd={e => {}}
-                    className='border button btn' onClick={()=>onAdd(counter)}>Agregar al Carrito
+                    className='border button btn' type="button" onClick={()=>onAdd(counter)}>Agregar al Carrito
                     </motion.button> 
                 </div>
     
