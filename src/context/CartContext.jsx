@@ -37,14 +37,15 @@ const CartContext = ({children}) => {
     } 
     
 
-   let precioFinal =  carrito.reduce((acc,item)=>acc + item.price * item.quantity,0)
+    let precioFinal =  carrito.reduce((acc,item)=>acc + item.price * item.quantity,0)
         
-    
+    let carritoCount = carrito.length
 
     return (
         <GlobalContext.Provider value={{
             carrito,
             precioFinal,
+            carritoCount,
             addItem,
             clear,
             deleteItem

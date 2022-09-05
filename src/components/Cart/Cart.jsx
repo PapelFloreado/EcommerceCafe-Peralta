@@ -5,6 +5,7 @@ import "./Cart.css"
 import {motion} from "framer-motion"
 import CartItems from '../CartItems/CartItems'
 import { GlobalContext } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
 const Cart = () => {
@@ -38,7 +39,12 @@ const Cart = () => {
           </div>
           </> 
           ) : 
-          (<h1>Tu Carrito está vacío...</h1>)
+          (<>
+            <h1>Tu Carrito está vacío...</h1>
+            <Link className=' d-flex align-items-center justify-content-center pt-5' to={"/productos"}>
+              <button className='button btn d-flex fs-2'>Volver a la tienda</button>
+            </Link>
+           </>)
         }
       </Container>
     </motion.div>

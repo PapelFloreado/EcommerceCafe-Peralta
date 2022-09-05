@@ -3,8 +3,9 @@ import "./ItemListContainer.css"
 import Container from "react-bootstrap/esm/Container"
 import ItemList from "../ItemList/ItemList"
 import SpinnerLoad from "../SpinnerLoad/SpinnerLoad"
-import productos from "../../assets/data/productos.json"
 import { useParams } from "react-router-dom"
+import db from '../../services'
+import { collection, getDocs } from 'firebase/firestore'
 
 
 
@@ -14,20 +15,28 @@ export default function ItemListContainer (){
     const [items, setItems] = useState([])    
     
     const {categoria} = useParams()
-      
-    useEffect(() => {
-        let {datos} = productos
-        
-        new Promise((resolve)=>{
-            setTimeout(() => {
-                
-                datos = categoria ? datos.filter(el=> el.categoria === categoria) : datos
-                resolve(datos)
-            }, 2000);
-        }).then (data=>setItems(data))
 
-    }, [categoria])
-    
+
+    useEffect(() => {
+        const getColData = async () =>{
+          try { 
+            const data = collection(db, "productos")
+            const col = await getDocs(data)
+            const res = col.docs.map((doc) =>doc={id:doc.id, ...doc.data()})
+            const res2 = categoria ? res.filter(el=> el.categoria === categoria) : res
+            setItems(res2)
+            
+          } catch (error) {
+            console.log(error)
+          }
+         
+        }
+        getColData()
+        return () => {
+          
+        }
+      }, [categoria])
+        
 
 
     return(
