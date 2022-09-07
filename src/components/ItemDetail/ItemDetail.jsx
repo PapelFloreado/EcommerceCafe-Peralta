@@ -12,7 +12,7 @@ const ItemDetail = ({item}) => {
 
 const {addItem} = useContext(GlobalContext)
   
-const {id, title, price, description, pictureUrl, altImg} = item
+const {id, title, price, description, pictureUrl, altImg,stock} = item
 const [counter, setCounter] = useState(0)
 
 function onAdd(quantity){
@@ -42,10 +42,17 @@ function onAdd(quantity){
             <p>Precio: ${price}</p>
             {
             counter !== 0 ? (
-            <Link to="/cart">
-              <button className='btn button btn-compra'>Finalizar compra</button> 
-            </Link>):
-              (<ItemCount item={item} quantity={item.quantity} stock={item.stock} initial={1} onAdd={onAdd}/>)
+            <div> 
+              <Link to="/productos">
+              <button className='btn mb-3 button btn-compra'>Seguir comprando</button> 
+              </Link>
+              <Link to="/cart">
+                <button className='btn button btn-compra'>Finalizar compra</button> 
+              </Link>
+            </div>
+            ):
+
+              (<ItemCount item={item} stock={stock} initial={1} onAdd={onAdd}/>)
             }
           </div>
         </div>

@@ -21,7 +21,7 @@ const CartWidget = ()=> {
                 <NavLink to={"/cart"}>
                 <motion.p   initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            exit={{ opacity: 1}}>
+                            exit={{ opacity: 0}}>
                 <img src={cart} alt="cart" width={25}/>
                 {carritoCount}
                 </motion.p>

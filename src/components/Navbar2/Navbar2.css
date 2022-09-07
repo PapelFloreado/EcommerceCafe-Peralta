@@ -8,3 +8,8 @@
 .basis{
     flex-basis: 100%;
 }
+.back:hover{
+    background-color: black;
+    color:white;
+    transition: 0.3s ease-in-out;
+}

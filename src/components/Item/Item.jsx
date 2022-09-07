@@ -18,7 +18,7 @@ function Item({title, description, price, id, pictureUrl}){
         {description}
         </Card.Text>
         <Card.Text>
-         Price: ${price}, Product Id:{id}
+         Precio ${price}
         </Card.Text>
         <Link className='d-flex justify-content-center' to={`/item-detail/${id}`}>
           <motion.button

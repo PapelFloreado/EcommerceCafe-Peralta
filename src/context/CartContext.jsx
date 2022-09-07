@@ -15,8 +15,7 @@ const CartContext = ({children}) => {
             
             let aux = carrito
             let itemIndex = aux.findIndex(element=> element.id === item.id)
-            aux[itemIndex]["quantity"] = quantity += 1
-            
+            aux[itemIndex]["quantity"] += quantity 
             setCarrito([...aux])
         }else{
             setCarrito([...carrito, {...item, quantity}])
@@ -35,7 +34,8 @@ const CartContext = ({children}) => {
     const deleteItem = (itemId)=>{setCarrito(carrito.filter(el=>el.id !== itemId))
 
     } 
-    
+
+  
 
     let precioFinal =  carrito.reduce((acc,item)=>acc + item.price * item.quantity,0)
         
@@ -48,7 +48,8 @@ const CartContext = ({children}) => {
             carritoCount,
             addItem,
             clear,
-            deleteItem
+            deleteItem,
+            
 
         }}>{children}</GlobalContext.Provider>
     )

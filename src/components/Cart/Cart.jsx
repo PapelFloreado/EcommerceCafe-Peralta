@@ -20,7 +20,7 @@ const Cart = () => {
     transition={{
     duration: 1.2,
     delay: 0,
-    ease: 'linear'
+    ease: "easeInOut"
     }}>
       <Container className="cart">
         {
@@ -42,7 +42,11 @@ const Cart = () => {
           (<>
             <h1>Tu Carrito está vacío...</h1>
             <Link className=' d-flex align-items-center justify-content-center pt-5' to={"/productos"}>
-              <button className='button btn d-flex fs-2'>Volver a la tienda</button>
+              <motion.button whileHover={{ scale: 1.2 }} 
+            whileTap={{ scale: 1.5 }}
+            transition={{ type: "spring", stiffness: 100, damping: 50 }}
+            onHoverStart={e => {}}
+            onHoverEnd={e => {}} className='button btn d-flex fs-2 p-3'>Volver a la tienda</motion.button>
             </Link>
            </>)
         }

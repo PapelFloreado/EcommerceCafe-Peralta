@@ -9,7 +9,7 @@ const Productos = () => {
     transition={{
     duration: 1.5,
     delay: 0,
-    ease: "linear"
+    ease: "easeInOut"
     }}>
       <ItemListContainer />
     </motion.div>

@@ -9,6 +9,7 @@ import "./Navbar2.css"
 import logo from "../../logo-coffe.svg"
 
 
+
 function BasicExample() {
   return (
     <Navbar className="navbar" expand="lg">
@@ -23,11 +24,11 @@ function BasicExample() {
           <Nav className="me-auto justify-content-around basis">
             <NavLink className="nav-link" to={"/"}>Home</NavLink>
             <NavLink className="nav-link" to={"/productos"}>Productos</NavLink>
-            <NavDropdown title="Categorías" id="basic-nav-dropdown">
+            <NavDropdown title="Categorías" id="basic-nav-dropdown">   
                 <ListGroup>
-                    <NavLink className="border-bottom justify-content-center" to={"/categoria/cafe"} >Granos de Café</NavLink>
-                    <NavLink className="border-bottom" to={"/categoria/capsulas"} >Capsulas</NavLink>
-                    <NavLink to={"/categoria/cafetera"} >Cafeteras</NavLink>
+                    <NavLink className="back border-bottom justify-content-center" to={"/categoria/cafe"} >Granos de Café</NavLink>
+                    <NavLink className="back border-bottom" to={"/categoria/capsulas"} >Capsulas</NavLink>
+                    <NavLink className="back" to={"/categoria/cafetera"} >Cafeteras</NavLink>
                 </ListGroup>
             </NavDropdown>
             <NavLink className="nav-link" to={"/contacto"}>Contacto</NavLink>

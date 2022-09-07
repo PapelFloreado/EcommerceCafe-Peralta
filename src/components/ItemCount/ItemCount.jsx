@@ -32,14 +32,14 @@ const ItemCount = ({stock, initial=1, onAdd, item}) => {
                     transition={{ type: "spring", stiffness: 400, damping: 50 }}
                     onHoverStart={e => {}}
                     onHoverEnd={e => {}} 
-                    className='border button btn'  onClick={Restar}>-</motion.button>
+                    className=' button btn'  onClick={Restar}>-</motion.button>
                 <div className='align-items-center d-flex ' >Unidades {counter} </div>
                 <motion.button whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 1.5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 50 }}
                     onHoverStart={e => {}}
                     onHoverEnd={e => {}} 
-                    className='border button btn'  onClick={Sumar}>+</motion.button>
+                    className=' button btn'  onClick={Sumar}>+</motion.button>
             </ButtonGroup>
         </div>
                 <div className="d-flex pt-3">
@@ -48,7 +48,7 @@ const ItemCount = ({stock, initial=1, onAdd, item}) => {
                     transition={{ type: "spring", stiffness:100, damping: 50 }}
                     onHoverStart={e => {}}
                     onHoverEnd={e => {}}
-                    className='border button btn' type="button" onClick={()=>onAdd(counter)}>Agregar al Carrito
+                    className='button btn' type="button" onClick={()=>onAdd(counter)}>Agregar al Carrito
                     </motion.button> 
                 </div>
     

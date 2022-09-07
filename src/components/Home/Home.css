@@ -3,7 +3,7 @@
     flex-direction: row;
 }
 .linea{
-    border-bottom: 3px solid black;
+    border-bottom: 1.5px solid black;
 }
 .home-title{
     padding: 5rem 2rem 1rem 0;
@@ -13,7 +13,10 @@
 .text-home{
     font-size: 1.2rem;
 }
-
+.btn:hover {
+    background-color: black;
+    color: white;
+}
 
 @media screen and (max-width: 1200px){
     .home-container{
