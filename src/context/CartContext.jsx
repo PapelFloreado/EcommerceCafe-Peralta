@@ -9,7 +9,7 @@ const CartContext = ({children}) => {
 
     const [carrito, setCarrito] = useState([])
 
-    const addItem = (item, quantity,stock)=>{
+    const addItem = (item, quantity)=>{
         
         if(isInCart(item.id)){
             

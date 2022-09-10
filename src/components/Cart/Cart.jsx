@@ -6,6 +6,7 @@ import {motion} from "framer-motion"
 import CartItems from '../CartItems/CartItems'
 import { GlobalContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
+import FormCart from '../FormCart/FormCart'
 
 
 const Cart = () => {
@@ -37,6 +38,7 @@ const Cart = () => {
               <h2 className="">Precio Final: ${precioFinal}</h2>
             </div>
           </div>
+          <FormCart/>
           </> 
           ) : 
           (<>

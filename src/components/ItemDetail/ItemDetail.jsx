@@ -17,7 +17,6 @@ const [counter, setCounter] = useState(0)
 
 function onAdd(quantity){
   setCounter(quantity)
-  console.log(quantity)
 
   addItem(item, quantity)
 }
