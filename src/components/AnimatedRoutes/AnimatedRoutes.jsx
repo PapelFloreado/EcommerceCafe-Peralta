@@ -4,8 +4,8 @@ import Cart from '../Cart/Cart'
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import Productos from '../Productos/Productos'
 import Home from '../Home/Home'
-import Contacto from '../Contacto/Contacto'
 import {AnimatePresence} from "framer-motion"
+
 
 
 
@@ -21,7 +21,6 @@ const location = useLocation()
                 <Route path="/item-detail/:id" element={<ItemDetailContainer/>}/>
                 <Route path='/categoria/:categoria' element={<Productos/>}/>
                 <Route path="/productos" element={<Productos/>}/>
-                <Route path="/contacto" element={<Contacto/>}/>
         </Routes>
     </AnimatePresence>
   )

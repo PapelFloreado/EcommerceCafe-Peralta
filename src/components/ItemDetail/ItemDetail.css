@@ -20,6 +20,12 @@ img.img-detail{
     padding:1rem
 }
 
+@media screen and (max-width: 1200px){
+    .btn-compra{
+        display: flex;
+    }
+}
+
 @media screen and (max-width: 720px) {
     .item-detail{
         display: flex;
@@ -30,5 +36,8 @@ img.img-detail{
     }
     .item-title{
         font-size: 3em;
+    }
+    .btn-compra{
+        display: flex;
     }
 }

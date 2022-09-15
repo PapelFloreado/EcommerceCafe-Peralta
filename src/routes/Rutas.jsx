@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import Footer from '../components/Footer/Footer'
-import Navbar2 from "../components/Navbar2/Navbar2"
+import Navbar from "../components/Navbar/Navbar"
 import AnimatedRoutes from '../components/AnimatedRoutes/AnimatedRoutes'
 
 
@@ -9,7 +9,7 @@ import AnimatedRoutes from '../components/AnimatedRoutes/AnimatedRoutes'
 const Rutas = () => {
   return (
     <BrowserRouter>
-    <Navbar2/> 
+    <Navbar/> 
         <AnimatedRoutes/>
     <Footer/>
     </BrowserRouter>

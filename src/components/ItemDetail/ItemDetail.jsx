@@ -10,15 +10,15 @@ import { GlobalContext } from '../../context/CartContext';
 
 const ItemDetail = ({item}) => {
 
-const {addItem} = useContext(GlobalContext)
+const {addItem, isInCart} = useContext(GlobalContext)
   
 const {id, title, price, description, pictureUrl, altImg,stock} = item
 const [counter, setCounter] = useState(0)
 
 function onAdd(quantity){
   setCounter(quantity)
-
   addItem(item, quantity)
+  
 }
 
 
@@ -36,22 +36,22 @@ function onAdd(quantity){
             <img className='img-detail p-5 col-lg-8 col-md-12' alt={altImg} src={pictureUrl}></img>
           <div className="column px-5 col-lg-4 col-md-12">
             <h1 className='item-title'>{title}</h1>
-            <p className="item-description">{description}</p>
-            <p>Item ID: {id}</p>
-            <p>Precio: ${price}</p>
-            {
-            counter !== 0 ? (
-            <div> 
-              <Link to="/productos">
-              <button className='btn mb-3 button btn-compra'>Seguir comprando</button> 
-              </Link>
-              <Link to="/cart">
-                <button className='btn button btn-compra'>Finalizar compra</button> 
-              </Link>
-            </div>
-            ):
-
-              (<ItemCount item={item} stock={stock} initial={1} onAdd={onAdd}/>)
+            <p className="item-description fs-5">{description}</p>
+            <p className='item-description fs-5'>Disponible: {stock}</p>
+            <p className='item-description fs-5'>Precio: ${price}</p>
+            { stock === 0 ? (<div className='button btn fs-4'>Lo sentimos, en este momento no tenemos stock...</div>):
+            (isInCart(id) || counter ? 
+              (
+                <div> 
+                  <Link to="/productos">
+                  <button className='btn mb-3 button btn-compra'>Seguir comprando</button> 
+                  </Link>
+                  <Link to="/cart">
+                    <button className='btn button btn-compra'>Finalizar compra</button> 
+                  </Link>
+                </div>
+              ) :
+              (<ItemCount item={item} stock={stock} initial={1} onAdd={onAdd}/>))
             }
           </div>
         </div>

@@ -1,12 +1,21 @@
 import { useContext, useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import { Button} from 'react-bootstrap';
 import { GlobalContext } from '../../context/CartContext';
 import db from '../../services'
-import { collection, addDoc} from "firebase/firestore"
+import { collection, addDoc, updateDoc, doc} from "firebase/firestore"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import "./FormCart.css"
+import moment from 'moment/moment';
 
-function BasicExample() {
+
+function BasicExample() { 
 
     const {precioFinal, carrito} = useContext(GlobalContext)
+
+    const MySwal = withReactContent(Swal)
+
 
     const [ formulario, setFormulario] = useState({
         buyer:{
@@ -16,7 +25,8 @@ function BasicExample() {
             telefono:"",
         },
         total:{precioFinal},
-        compra: {carrito}
+        compra: {carrito},
+        fecha: moment().format("DD MM YYYY hh:mm:ss")
     })
 
     const { buyer: {email, nombre, apellido,telefono},} = formulario
@@ -32,42 +42,78 @@ function BasicExample() {
         })
     }
 
-    const setInFirebase =  async (formulario)=>{
-        try {
-            const col = collection(db, "ordenes")
-            const generarOrden = await addDoc(col, formulario)
+    const updateFirebase = async (formulario)=>{
+        updateStock(carrito)
+        setInFirebase(formulario) 
+    }
 
-        } catch (error) {
-            console.log(error)
+  
+
+    const updateStock = (carrito)=>{
+        
+        let idProduct = carrito.forEach(e=>{
+            const {id, stock, quantity} = e
+            let newStock = stock - quantity
+            const producto = doc(db,"productos", id)
+            updateDoc(producto,{stock: newStock})
+        })
+      
+    }
+
+    
+    
+
+    const setInFirebase =  async (formulario)=>{
+        if(nombre === "" || apellido === "" || email === "" || telefono === "" ){
+            MySwal.fire({
+                title: <strong>Error!</strong>,
+                html: <i>Te faltan completar los datos</i>,
+                icon: 'error'})
+        }else{
+
+            try {
+                const col = collection(db, "ordenes")
+                await addDoc(col, formulario)
+                MySwal.fire({
+                    title: <strong>Excelente</strong>,
+                    html: <i>Muchas gracias por su compra</i>,
+                    icon: 'success'
+                  }).then(localStorage.removeItem("carrito")).then(function(){
+                    window.location.href= "/"
+                  })
+                
+    
+            } catch (error) {
+                console.log(error)
+            }
         }
+
     }
 
     return (
-    <Form className="col-6 p-5 row d-flex justify-content-center ">
+    <Form className="col-6 p-5 row d-flex justify-content-center mx-auto ">
         <h2>Datos de Compra</h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Nombre</Form.Label>
-            <Form.Control onChange={handleChange} value={nombre} name="nombre" type="text" placeholder="Nombre" />
+            <Form.Control onChange={handleChange} value={nombre} name="nombre" type="text" placeholder="Nombre" required />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Apellido</Form.Label>
-            <Form.Control onChange={handleChange} value={apellido} name="apellido" type="text" placeholder="Apellido" />
+            <Form.Control onChange={handleChange} value={apellido} name="apellido" type="text" placeholder="Apellido" required />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control onChange={handleChange} value={email} name="email" type="email" placeholder="Enter email" />
+            <Form.Control onChange={handleChange} value={email} name="email" type="email" placeholder="Enter email" required/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Teléfono</Form.Label>
-            <Form.Control onChange={handleChange} value={telefono} name="telefono" type="number" placeholder="Teléfono" />
+            <Form.Control onChange={handleChange} value={telefono} name="telefono" type="number" placeholder="Teléfono" required/>
         </Form.Group>
         <Form.Text className="fs-2">
           Precio: ${precioFinal}
         </Form.Text>
-
-        <button onClick={()=>setInFirebase(formulario)} className="button btn" type="button">
-            Terminar Compra
-        </button>
+        <Button onClick={()=>updateFirebase(formulario)} className="button btn" type='button'>Terminar Compra</Button>
+        {/* <Button onClick={()=>stock(carrito)} className="button btn" type='button'>actualizar</Button> */}
     </Form>
   );
 }

@@ -1,0 +1,17 @@
+.swal2-confirm.swal2-styled{
+    background-color: black;
+}
+
+.btn{
+    border:black
+}
+
+.btn:active{
+    background-color: black;
+    border-color:black
+}
+
+.btn-check:focus+.btn, .btn:focus{
+    box-shadow: none;
+    background-color: black;
+}

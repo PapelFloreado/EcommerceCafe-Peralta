@@ -27,7 +27,7 @@ function Item({title, description, price, id, pictureUrl}){
             transition={{ type: "spring", stiffness: 100, damping: 50 }}
             onHoverStart={e => {}}
             onHoverEnd={e => {}}
-            className="button btn" variant="dark">Ver mas detalles del Producto</motion.button>
+            className="button btn fs-5" variant="dark">Ver mas detalles del Producto</motion.button>
         </Link>
         
         </Card.Body>

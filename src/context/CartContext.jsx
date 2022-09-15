@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { createContext, useState } from 'react'
 
 export const GlobalContext = createContext() 
@@ -7,7 +7,14 @@ export const GlobalContext = createContext()
 const CartContext = ({children}) => {
 
 
-    const [carrito, setCarrito] = useState([])
+    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("carrito"))||[])
+
+
+
+    useEffect(() => {
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+    }, [carrito])
+    
 
     const addItem = (item, quantity)=>{
         
@@ -17,15 +24,17 @@ const CartContext = ({children}) => {
             let itemIndex = aux.findIndex(element=> element.id === item.id)
             aux[itemIndex]["quantity"] += quantity 
             setCarrito([...aux])
+    
         }else{
-            setCarrito([...carrito, {...item, quantity}])
-
+            const nuevoItem = {...item, quantity}
+            setCarrito([...carrito , nuevoItem])
         }
-
     }
 
+    
 
     const isInCart = (itemId)=> carrito.find(el=> el.id === itemId)
+
 
     const clear = ()=>{
         setCarrito([]) 
@@ -34,8 +43,6 @@ const CartContext = ({children}) => {
     const deleteItem = (itemId)=>{setCarrito(carrito.filter(el=>el.id !== itemId))
 
     } 
-
-  
 
     let precioFinal =  carrito.reduce((acc,item)=>acc + item.price * item.quantity,0)
         
@@ -46,6 +53,7 @@ const CartContext = ({children}) => {
             carrito,
             precioFinal,
             carritoCount,
+            isInCart,
             addItem,
             clear,
             deleteItem,

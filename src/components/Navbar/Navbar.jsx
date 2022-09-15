@@ -5,14 +5,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {NavLink} from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget"
-import "./Navbar2.css"
+import "./Navbar.css"
 import logo from "../../logo-coffe.svg"
 
 
 
 function BasicExample() {
   return (
-    <Navbar className="navbar" expand="lg">
+    <Navbar sticky="top" className="navbar" expand="lg">
       <Container>
         <Navbar.Brand>
             <NavLink to={"/"}>
@@ -26,12 +26,11 @@ function BasicExample() {
             <NavLink className="nav-link" to={"/productos"}>Productos</NavLink>
             <NavDropdown title="Categorías" id="basic-nav-dropdown">   
                 <ListGroup>
-                    <NavLink className="back border-bottom justify-content-center" to={"/categoria/cafe"} >Granos de Café</NavLink>
-                    <NavLink className="back border-bottom" to={"/categoria/capsulas"} >Capsulas</NavLink>
-                    <NavLink className="back" to={"/categoria/cafetera"} >Cafeteras</NavLink>
+                    <NavLink className="back border-bottom justify-content-center" to={"/categoria/cafe"}>Granos de Café</NavLink>
+                    <NavLink className="back border-bottom" to={"/categoria/capsulas"}>Capsulas</NavLink>
+                    <NavLink className="back" to={"/categoria/cafetera"}>Cafeteras</NavLink>
                 </ListGroup>
             </NavDropdown>
-            <NavLink className="nav-link" to={"/contacto"}>Contacto</NavLink>
             <CartWidget/>
           </Nav>
         </Navbar.Collapse>

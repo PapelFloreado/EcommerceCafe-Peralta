@@ -11,7 +11,7 @@ import FormCart from '../FormCart/FormCart'
 
 const Cart = () => {
 
-  const {carrito, clear,precioFinal} = useContext(GlobalContext)
+  const {carrito, clear, precioFinal} = useContext(GlobalContext)
   
 
   return (
@@ -33,6 +33,9 @@ const Cart = () => {
             {carrito.map((item,index)=><CartItems key={index} pictureUrl={item.pictureUrl} price={item.price} item={item} quantity={item.quantity} id={item.id} title={item.title}/>)}
           </div>
           <div className='d-flex justify-content-between my-5'>
+          <Link to="/productos">
+             <button className='btn button btn-clear'>Volver a la tienda</button>
+          </Link>
           <button className='btn btn-clear' onClick={clear}>Vaciar Carrito</button>
             <div className=" align-items-center d-flex">
               <h2 className="">Precio Final: ${precioFinal}</h2>
@@ -44,11 +47,13 @@ const Cart = () => {
           (<>
             <h1>Tu Carrito está vacío...</h1>
             <Link className=' d-flex align-items-center justify-content-center pt-5' to={"/productos"}>
-              <motion.button whileHover={{ scale: 1.2 }} 
-            whileTap={{ scale: 1.5 }}
-            transition={{ type: "spring", stiffness: 100, damping: 50 }}
-            onHoverStart={e => {}}
-            onHoverEnd={e => {}} className='button btn d-flex fs-2 p-3'>Volver a la tienda</motion.button>
+              <motion.button  whileHover={{ scale: 1.2 }} 
+                              whileTap={{ scale: 1.5 }}
+                              transition={{ type: "spring", stiffness: 100, damping: 50 }}
+                              onHoverStart={e => {}}
+                              onHoverEnd={e => {}} className='button btn d-flex fs-2 p-3'>
+                                Volver a la tienda
+              </motion.button>
             </Link>
            </>)
         }
