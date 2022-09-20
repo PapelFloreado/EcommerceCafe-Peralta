@@ -11,7 +11,7 @@ function Item({title, description, price, id, pictureUrl}){
     <Container className="d-flex justify-content-center pb-5 pt-5 col-lg-4 col-md-6 col-sm-12 ">
   
       <Card  className="cards"  style={{ width: '30rem' }}>
-        <Card.Img variant="top" src={pictureUrl}/>
+        <Card.Img className='img-card card-img-top card' variant="top" src={pictureUrl}/>
         <Card.Body>
         <Card.Title>{title}</Card.Title>
          <Card.Text>

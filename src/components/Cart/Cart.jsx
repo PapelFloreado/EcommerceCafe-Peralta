@@ -41,7 +41,9 @@ const Cart = () => {
               <h2 className="font-responsive">Precio Final: ${precioFinal}</h2>
             </div>
           </div>
-          <FormCart/>
+          <div className='container-fluid d-flex  col-md-8 col-sm-12 col-12'>
+            <FormCart/>
+          </div>
           </> 
           ) : 
           (<>

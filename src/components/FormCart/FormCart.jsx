@@ -8,6 +8,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import "./FormCart.css"
 import moment from 'moment/moment';
+import SpinnerLoad from "../SpinnerLoad/SpinnerLoad"
 
 
 
@@ -19,6 +20,8 @@ function BasicExample() {
     const {precioFinal, carrito} = useContext(GlobalContext)
 
     const MySwal = withReactContent(Swal)
+
+    const [loading, setLoading] = useState(false)
 
     const [ formulario, setFormulario] = useState({
         buyer:{
@@ -53,14 +56,14 @@ function BasicExample() {
   
 
     const updateStock = (carrito)=>{
-        
+        setLoading(true)
         let idProduct = carrito.forEach(e=>{
             const {id, stock, quantity} = e
             let newStock = stock - quantity
             const producto = doc(db,"productos", id)
             updateDoc(producto,{stock: newStock})
         })
-      
+        
     }
 
     
@@ -74,8 +77,10 @@ function BasicExample() {
         }else{
 
             try {
+                setLoading(true)
                 const col = collection(db, "ordenes")
                 await addDoc(col, formulario)
+                setLoading(false)
                 MySwal.fire({
                     title: <strong>Excelente</strong>,
                     html: <i>Muchas gracias por su compra</i>,
@@ -93,8 +98,8 @@ function BasicExample() {
     }
 
     return (
-    <>
-    <Form className="col-9-md container-fluid  col-12 p-5 row d-flex justify-content-center mx-auto ">
+    <>{
+        loading === true ? (<SpinnerLoad/>):(<Form className="container-fluid  p-5 row d-flex justify-content-center mx-auto ">
         <h2>Datos de Compra</h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Nombre</Form.Label>
@@ -116,8 +121,10 @@ function BasicExample() {
           Precio: ${precioFinal}
         </Form.Text>
         <Button onClick={()=>updateFirebase(formulario)} className="button btn" type='button'>Terminar Compra</Button>
-    </Form>
-    </>
+    </Form>)
+    }
+</>
+    
   );
 }
 
