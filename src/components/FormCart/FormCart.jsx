@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button} from 'react-bootstrap';
 import { GlobalContext } from '../../context/CartContext';
@@ -10,12 +10,15 @@ import "./FormCart.css"
 import moment from 'moment/moment';
 
 
+
+
 function BasicExample() { 
+
+    
 
     const {precioFinal, carrito} = useContext(GlobalContext)
 
     const MySwal = withReactContent(Swal)
-
 
     const [ formulario, setFormulario] = useState({
         buyer:{
@@ -61,7 +64,6 @@ function BasicExample() {
     }
 
     
-    
 
     const setInFirebase =  async (formulario)=>{
         if(nombre === "" || apellido === "" || email === "" || telefono === "" ){
@@ -91,7 +93,8 @@ function BasicExample() {
     }
 
     return (
-    <Form className="col-6 p-5 row d-flex justify-content-center mx-auto ">
+    <>
+    <Form className="col-9-md container-fluid  col-12 p-5 row d-flex justify-content-center mx-auto ">
         <h2>Datos de Compra</h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Nombre</Form.Label>
@@ -113,8 +116,8 @@ function BasicExample() {
           Precio: ${precioFinal}
         </Form.Text>
         <Button onClick={()=>updateFirebase(formulario)} className="button btn" type='button'>Terminar Compra</Button>
-        {/* <Button onClick={()=>stock(carrito)} className="button btn" type='button'>actualizar</Button> */}
     </Form>
+    </>
   );
 }
 

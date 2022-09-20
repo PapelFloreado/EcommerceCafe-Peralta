@@ -14,3 +14,9 @@
     color:white;
     transition: 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 766px){
+    .navbar{
+        min-height: 12vh;
+    }
+}

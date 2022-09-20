@@ -29,16 +29,16 @@ const Cart = () => {
           (<>
           
           <h2 className="text-cart pt-5">Tu Carrito</h2>
-          <div>
+          <div className='container-fluid'>
             {carrito.map((item,index)=><CartItems key={index} pictureUrl={item.pictureUrl} price={item.price} item={item} quantity={item.quantity} id={item.id} title={item.title}/>)}
           </div>
-          <div className='d-flex justify-content-between my-5'>
+          <div className='d-flex justify-content-between my-5 container-fluid'>
           <Link to="/productos">
-             <button className='btn button btn-clear'>Volver a la tienda</button>
+             <button className='btn button btn-clear font-responsive '>Volver a la tienda</button>
           </Link>
-          <button className='btn btn-clear' onClick={clear}>Vaciar Carrito</button>
-            <div className=" align-items-center d-flex">
-              <h2 className="">Precio Final: ${precioFinal}</h2>
+          <button className='btn btn-clear font-responsive' onClick={clear}>Vaciar Carrito</button>
+            <div className=" align-items-center  d-flex">
+              <h2 className="font-responsive">Precio Final: ${precioFinal}</h2>
             </div>
           </div>
           <FormCart/>
