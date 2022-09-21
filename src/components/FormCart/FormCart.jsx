@@ -53,7 +53,7 @@ function BasicExample() {
         setInFirebase(formulario) 
     }
 
-  
+   
 
     const updateStock = (carrito)=>{
         setLoading(true)
