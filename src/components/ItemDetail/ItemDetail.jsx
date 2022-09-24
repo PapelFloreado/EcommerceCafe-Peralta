@@ -39,7 +39,10 @@ function onAdd(quantity){
             <p className="item-description fs-5">{description}</p>
             <p className='item-description fs-5'>Disponible: {stock}</p>
             <p className='item-description fs-5'>Precio: ${price}</p>
-            { stock === 0 ? (<div className='button btn fs-4'>Lo sentimos, en este momento no tenemos stock...</div>):
+            { stock === 0 ? (
+            <Link to="/productos">
+              <div className='button btn fs-4'>Lo sentimos, en este momento no tenemos stock...</div>
+            </Link>):
             (isInCart(id) || counter ? 
               (
                 <div> 

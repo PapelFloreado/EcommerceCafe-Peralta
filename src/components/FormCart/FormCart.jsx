@@ -15,8 +15,6 @@ import SpinnerLoad from "../SpinnerLoad/SpinnerLoad"
 
 function BasicExample() { 
 
-    
-
     const {precioFinal, carrito} = useContext(GlobalContext)
 
     const MySwal = withReactContent(Swal)
@@ -34,7 +32,7 @@ function BasicExample() {
         compra: {carrito},
         fecha: moment().format("DD MM YYYY hh:mm:ss")
     })
-
+    
     const { buyer: {email, nombre, apellido,telefono},} = formulario
 
     const handleChange = (e)=>{
@@ -66,10 +64,9 @@ function BasicExample() {
         
     }
 
-    
-
     const setInFirebase =  async (formulario)=>{
         if(nombre === "" || apellido === "" || email === "" || telefono === "" ){
+            setLoading(false)
             MySwal.fire({
                 title: <strong>Error!</strong>,
                 html: <i>Te faltan completar los datos</i>,
@@ -79,16 +76,19 @@ function BasicExample() {
             try {
                 setLoading(true)
                 const col = collection(db, "ordenes")
-                await addDoc(col, formulario)
-                setLoading(false)
+                await addDoc(col, formulario).then(({id})=>{
                 MySwal.fire({
                     title: <strong>Excelente</strong>,
-                    html: <i>Muchas gracias por su compra</i>,
+                    html:(
+                        <div>
+                            <h3>Su ID de compra es: {id}</h3>
+                        </div>
+                    ),
                     icon: 'success'
                   }).then(localStorage.removeItem("carrito")).then(function(){
                     window.location.href= "/"
                   })
-                
+            })
     
             } catch (error) {
                 console.log(error)

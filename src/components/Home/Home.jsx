@@ -7,6 +7,7 @@ import "./Home.css"
 import { useInView } from 'react-intersection-observer'
 import { useAnimation } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import OrderListContainer from '../OrderListContainer/OrderListContainer'
 
 const Home = () => {
 
@@ -61,6 +62,7 @@ const Home = () => {
             </motion.div>
           </motion.div>
         </div>
+        <OrderListContainer/>
       </Container>
     </motion.div>
   )
